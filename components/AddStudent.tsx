@@ -48,10 +48,18 @@ const AddStudent = ({ onAdd }: AddStudentProps) => {
     setAverage(70);
   };
 
+  // Shared styling for the input fields.
+  const inputStyles =
+    "w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-800 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100";
+
   // Render the four controlled inputs and Add student button.
   return (
-    <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+      <h3 className="mb-5 text-lg font-bold text-slate-900">
+        Student information
+      </h3>
+
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         {/* First name */}
         <div>
           <label
@@ -65,7 +73,7 @@ const AddStudent = ({ onAdd }: AddStudentProps) => {
             type="text"
             value={firstName}
             onChange={(event) => setFirstName(event.target.value)}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+            className={inputStyles}
             placeholder="Enter first name"
           />
         </div>
@@ -83,7 +91,7 @@ const AddStudent = ({ onAdd }: AddStudentProps) => {
             type="text"
             value={lastName}
             onChange={(event) => setLastName(event.target.value)}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+            className={inputStyles}
             placeholder="Enter last name"
           />
         </div>
@@ -100,7 +108,7 @@ const AddStudent = ({ onAdd }: AddStudentProps) => {
             id="grade"
             value={grade}
             onChange={(event) => setGrade(Number(event.target.value))}
-            className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2"
+            className={`${inputStyles} cursor-pointer`}
           >
             <option value={9}>9</option>
             <option value={10}>10</option>
@@ -115,7 +123,7 @@ const AddStudent = ({ onAdd }: AddStudentProps) => {
             htmlFor="average"
             className="mb-2 block text-sm font-semibold text-slate-700"
           >
-            Average
+            Average (%)
           </label>
           <input
             id="average"
@@ -124,7 +132,7 @@ const AddStudent = ({ onAdd }: AddStudentProps) => {
             max={100}
             value={average}
             onChange={(event) => setAverage(Number(event.target.value))}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2"
+            className={inputStyles}
           />
         </div>
       </div>
@@ -133,7 +141,7 @@ const AddStudent = ({ onAdd }: AddStudentProps) => {
       <button
         type="button"
         onClick={handleAdd}
-        className="mt-5 rounded-lg bg-blue-700 px-5 py-2.5 font-semibold text-white transition hover:bg-blue-800"
+        className="mt-6 w-full rounded-lg bg-blue-700 px-5 py-3 font-semibold text-white transition-colors hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto"
       >
         Add student
       </button>
