@@ -60,4 +60,5 @@ data/
 | 10 | Click each Navbar link. | The page jumps to the corresponding section. | [Pass] |
 
 ## Contributers
-Amanuel Tesfatsion & Paulo Massao
+Amanuel Tesfatsion | Footer, StudentCard, AddStudent, StudentList, Testing
+Paulo Massao       | StatsPanel, SearchBox, Navbar, StudentPortal, Testing
